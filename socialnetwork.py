@@ -2,6 +2,100 @@
 ##My Social Network
 
 class User:
+    
+    def __init__(self, userName):
+        self.userName = userName
+        self.firstName = ""
+        self.lastName = ""
+        self.bio = ""
+        self.friends = []
+        self.posts = []
+
+    def viewFriends(self, friends):
+        for people in friends:
+            print(people.userName)
+
+    def addfirstName(self, firstName):
+        self.firstName = firstName
+
+    def addlastName(self, lastName):
+        self.lastName = lastName
+
+    def addbio(self, bio):
+        self.bio = bio
+
+    def addFriend(self, something):
+        self.friends.append(something)
+
+    def addposts(self, post):
+        self.posts.append(post)
+
+    def unFriend(self, yoda):
+        for friend in self.friends:
+            if friend.userName == yoda.userName:
+                self.friends.remove(yoda)
+
+
+
+    def viewNewsFeed(self, friends):
+        for friend in self.friends:
+            print(friend.posts)
+
+
+
+if __name__ == "__main__":
+    userName = "ThunderousChocolate"
+
+
+
+    Samhira = User(userName)
+    Billy = User("SecretlyTheGrimReaper")
+    DoodleBob = User("MihoyMinoy")
+
+    Samhira.addFriend(Billy)
+    Samhira.addFriend(DoodleBob)
+
+    Samhira.addposts("skibidi")
+    Billy.addposts("Pah Pah!")
+    DoodleBob.addposts("And a Poom Poom Prrrrrrh Poom! Skiyah!")
+
+    Samhira.viewFriends(Samhira.friends)
+    Samhira.viewNewsFeed(Samhira.friends)
+    Samhira.unFriend(Billy)
+    Samhira.viewFriends(Samhira.friends)
+        
+
+    friendsList = []
+    posts = []
+
+    def createPost(self, content):
+        myPost = Post(content)
+        self.posts.append(myPost)
+        myPost.createPostID(len(posts))
+
+    def createuserID(self, num):
+        self.userID = num
+
+class Post:
+    def __init__(self, userName):
+        self.content = ""
+        self.postID = ""
+        self.comments = []
+
+    def createcomment(self, comment):
+        self.comment.append(comment)
+
+    def createpostID(self, num):
+        self.postID = num
+
+class Network:
+    def __init__(samhira):
+        self.users = []
+
+    def createUser (self, userName):
+        myUser = User(userName)
+        self.Users.append(myUser)
+        myUser.createUserID(len(Users))
     def __init__(self, firstName, lastName, userName, bio, userID):
         self.firstName = firstName
         self.lastName = lastName
@@ -23,48 +117,57 @@ class User:
 
 
 if __name__ == "__main__":
-    firstName = "Samhira"
-    lastName = "Babiker"
+    
     userName = "ThunderousChocolate"
-    bio = "I'm not gay I swear."
-    userID = "88888888"
+   
+    User(userName)
 
-    User(firstName, lastName, userName, bio, userID)
-
-    samhira = User(firstName, lastName, userName, bio, userID)
-    lucy = User("Lucy", "Lucille", "lucygoosey", "Big Shaq", "0000")
+    samhira = User(userName)
+    lucy = User("lucygoosey")
     print(samhira.firstName)
     print(lucy.firstName)
 
+    post1 ="I'm expanding my horizons.' *says in a snobby voice*"
+
     samhira.addFriend("lucygoosey")
     print(samhira.friends)
-    samhira.posts.append("'I'm expanding my horizons.' *says in a snobby voice*")
+    samhira.posts.append(post1)
     print(samhira.posts)
 
-    selena = User("Selena", "Gonzales", "selena_gonz", "Selena?", "69")
+    selena = User("selena_gonz")
     print(selena.firstName)
 
-    samhira.addFriend("selena_gonz")
+    post2 ="yeet"
+
+    samhira.addFriend(selena)
     print(samhira.friends)
-    samhira.posts.append("yeet")
+    samhira.posts.append(post2)
     print(samhira.posts)
 
-    lucy.posts.append("got a new sister goose... might eat her idk yet.")
+    post3 ="got a new sister goose... might eat her idk yet."
+
+    lucy.posts.append(post3)
     print(lucy.posts)
+
+    post4 ="shE doEs'Nt evEn gO heRe."
     
 
-    selena.posts.append("shE doEs'Nt evEn gO heRe.")
+    selena.posts.append(post4)
     print(selena.posts)
 
-    daisy = User("Daisy", "Rivera", "daisythenerd", "kms", "420")
+    daisy = User("daisythenerd")
     print(daisy.firstName)
 
-    samhira.addFriend("daisythenerd")
+    post5 ="she's a weirdo."
+
+    samhira.addFriend(daisy)
     print(samhira.friends)
-    samhira.posts.append("she's a weirdo.")
+    samhira.posts.append(post5)
     print(samhira.posts)
 
-    daisy.posts.append("I take pictures of cacti for a living.")
+    post6 ="I take pictures of cacti for a living."
+
+    daisy.posts.append(post6)
     print(daisy.posts)
 
     
@@ -80,40 +183,6 @@ if __name__ == "__main__":
 ##    print(masaran.posts)
 ##        
         
-    samhira.viewNewsFeed(userName)
-
-class User:
-    def __init__(self, userName):
-        self.userName = userName
-
-        friendsList = []
-        posts = []
-
-    def createPost(samhira, content):
-        myPost = Post(content)
-        self.posts.append(myPost)
-        myPost.createPostID(len(posts))
-
-    def createuserID(self, num):
-        self.userID = num
-
-class Post:
-    def __init__(samhira, ThunderousChocolate):
-        self.content = content
-        self.postID = ""
-        self.comments = []
-
-    def createpostID(self, num):
-        self.postID = num
-
-class Network:
-    def __init__(samhira):
-        self.users = []
-
-    def createUser (self, userName):
-        myUser = User(userName)
-        self.Users.append(myUser)
-        myUser.createUserID(len(Users))
-        
-
+##    samhira.viewNewsFeed(userName)
     
+
