@@ -81,3 +81,39 @@ if __name__ == "__main__":
 ##        
         
     samhira.viewNewsFeed(userName)
+
+class User:
+    def __init__(self, userName):
+        self.userName = userName
+
+        friendsList = []
+        posts = []
+
+    def createPost(samhira, content):
+        myPost = Post(content)
+        self.posts.append(myPost)
+        myPost.createPostID(len(posts))
+
+    def createuserID(self, num):
+        self.userID = num
+
+class Post:
+    def __init__(samhira, ThunderousChocolate):
+        self.content = content
+        self.postID = ""
+        self.comments = []
+
+    def createpostID(self, num):
+        self.postID = num
+
+class Network:
+    def __init__(samhira):
+        self.users = []
+
+    def createUser (self, userName):
+        myUser = User(userName)
+        self.Users.append(myUser)
+        myUser.createUserID(len(Users))
+        
+
+    
